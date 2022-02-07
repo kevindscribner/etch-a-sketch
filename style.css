@@ -9,31 +9,30 @@ body {
 }
 
 #wrapper {
-    display: inline-grid;
-    grid-template-columns: repeat(16, 1fr);
+    display: grid;
     background-color: white;
     border: solid 43px rgb(230, 2, 2);
     border-radius: 8px;
-    box-shadow: rgb(161, 160, 160) 20px 20px;
+    box-shadow: rgb(161, 160, 160) 16px 16px;
+    width: 60vh;
+    height: 60vh
 }
 
 .cell {
     border: solid 1px rgba(207, 207, 207, 0.199);
-    height: 47px;
-    width: 47px;
 }
 
 .title {
     text-align: center;
-    font-size: 64px
+    font-size: 64px;
+    padding: 20px;
     
 }
 
-.buttons {
+.color-buttons, .grid-buttons {
     display: flex;
     justify-content: center;
     padding: 20px;
-    gap:;
 }
 
 button {
@@ -43,7 +42,19 @@ button {
     box-shadow: rgb(161, 160, 160) 5px 5px;
 }
 
+.slider-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
 .credit {
     text-align: center;
-    padding: 20px;
+    padding: 25px;
+    font-size: 18px;
+}
+
+.github {
+    width: 24px;
+    height: 24px;
 }

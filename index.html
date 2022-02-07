@@ -10,14 +10,21 @@
 <body>
     <div class="container">
         <div class="title">etch-a-sketch</div>
-        <div class="buttons">
+        <div class="color-buttons">
             <button id="clear">clear</button>
             <button id="whiteBtn">eraser</button>
-            <button id="randBtn">random</button>
-            <button id="blackBtn">black</button>
+            <button id="randBtn">rainbow 🌈</button>
+            <button id="blackBtn">black ⬛</button>
         </div>
-    <div id="wrapper"></div>
-    <div class="credit">Created by Kevin Scribner</div>
+        <div id="wrapper"></div>
+        <div class="slider-container">
+            <input type="range" min="2" max="64" value="16" id="gridRange">
+            <output id="output"></output>
+        </div>
+        <div class="credit">Made by 
+            <a href="https://github.com/kevindscribner/etch-a-sketch"><img src="./images/GitHub-Mark-120px-plus.png" class="github"></a>
+            Kevin Scribner 
+        </div>
     </div>
     <script src="./main.js" defer></script>
 </body>

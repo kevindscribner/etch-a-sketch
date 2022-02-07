@@ -1,16 +1,32 @@
 const wrapper = document.getElementById('wrapper');
-let gridLength = 256;
 const clear = document.getElementById('clear');
 const randBtn = document.getElementById('randBtn');
 const blackBtn = document.getElementById('blackBtn');
 const whiteBtn = document.getElementById('whiteBtn');
+const gridRange = document.getElementById('gridRange');
+const output = document.getElementById('output');
 
-for(let i = 0; i < gridLength; i++){
-    let cell= document.createElement('div');
-    cell.classList.add('cell');
-    wrapper.appendChild(cell);
-    colorCell(cell);
+function drawGrid(cellSize){
+    removeGrid();
+    gridSize = cellSize ** 2;
+    for(let i = 0; i < gridSize; i++){
+        let cell= document.createElement('div');
+        cell.classList.add('cell');
+        wrapper.style.cssText = `grid-template-columns: repeat(${cellSize}, 1fr);`
+        wrapper.appendChild(cell);
+        colorCell(cell);
+    };
 };
+
+function removeGrid() {
+    gridCells = wrapper.querySelectorAll('div');
+    gridCells.forEach(gridcell => gridcell.remove());
+};
+
+gridRange.addEventListener('input', () => {
+    drawGrid(gridRange.value);
+    output.innerText = gridRange.value;
+});
 
 function colorCell(cell, color='black') {
     blackBtn.addEventListener('click', () => {
@@ -32,4 +48,6 @@ function colorCell(cell, color='black') {
 
 function randColor() {
     return "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0').toUpperCase();
-}
+};
+
+drawGrid(16);
