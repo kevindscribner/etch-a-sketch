@@ -9,10 +9,11 @@ const output = document.getElementById('output');
 function drawGrid(cellSize){
     removeGrid();
     gridSize = cellSize ** 2;
+    wrapper.style.cssText = `grid-template-columns: repeat(${cellSize}, 1fr);`
+    
     for(let i = 0; i < gridSize; i++){
         let cell= document.createElement('div');
         cell.classList.add('cell');
-        wrapper.style.cssText = `grid-template-columns: repeat(${cellSize}, 1fr);`
         wrapper.appendChild(cell);
         colorCell(cell);
     };
