@@ -29,14 +29,14 @@ body {
     
 }
 
-.color-buttons, .grid-buttons {
+.color-buttons{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding: 20px;
 }
 
 button {
-    font-size: 23px;
+    font-size: 15px;
     border-radius: 8px;
     background-color: white;
     box-shadow: rgb(161, 160, 160) 5px 5px;

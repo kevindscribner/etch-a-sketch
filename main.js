@@ -1,10 +1,10 @@
 const wrapper = document.getElementById('wrapper');
 const clear = document.getElementById('clear');
 const randBtn = document.getElementById('randBtn');
-const blackBtn = document.getElementById('blackBtn');
 const whiteBtn = document.getElementById('whiteBtn');
 const gridRange = document.getElementById('gridRange');
 const output = document.getElementById('output');
+const hex = document.getElementById('hex');
 
 function drawGrid(cellSize){
     removeGrid();
@@ -29,12 +29,12 @@ gridRange.addEventListener('input', () => {
     output.innerText = gridRange.value;
 });
 
-function colorCell(cell, color='black') {
-    blackBtn.addEventListener('click', () => {
-        color = 'black';
-    });
+function colorCell(cell, color=hex.value) {
+    hex.addEventListener('change', () =>{
+        color = hex.value;
+    })
     whiteBtn.addEventListener('click', () => {
-        color = 'white';
+        color = '';
     });
     randBtn.addEventListener('click', () => {
         color = randColor();
